@@ -22,7 +22,7 @@ ORDER BY total DESC
 
 /* Q4: Which city has the best customers? We would like to throw a promotional Music Festival in the city we made the most money. 
 Write a query that returns one city that has the highest sum of invoice totals. 
-Return both the city name & sum of all invoice totals */
+Return both the city name & sum of all invoice totals. */
 
 SELECT billing_city,SUM(total) AS InvoiceTotal
 FROM invoice
@@ -96,7 +96,7 @@ WHERE miliseconds > (
 ORDER BY miliseconds DESC;
 
 
-/* Q9: Find how much amount spent by each customer on artists? Write a query to return customer name, artist name and total spent */
+/* Q9: Find how much amount spent by each customer on artists? Write a query to return customer name, artist name and total spent. */
 
 WITH best_selling_artist AS (
 	SELECT artist.artist_id AS artist_id, artist.name AS artist_name, SUM(invoice_line.unit_price*invoice_line.quantity) AS total_sales
