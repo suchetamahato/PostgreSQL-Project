@@ -4,7 +4,7 @@ In this project, I wrote a series of SQL queries to analyze a database, addressi
 
 # Questions and Answers
 
-🔸**Q1: Who is the senior most employee based on job title?** 
+🔎**Q1: Who is the senior most employee based on job title?** 
 
 The query retrieves the job title, last name, and first name of employees from the "employee" table. It orders the results by the "levels" column in descending order, assuming that "levels" represents seniority. It limits the result to one row using `LIMIT 1`, thus giving the most senior employee based on job title.
 
