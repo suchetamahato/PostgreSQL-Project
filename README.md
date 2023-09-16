@@ -1,6 +1,6 @@
 # DIGITAL MUSIC STORE DATA ANALYSIS USING POSTGRESQL
 
-In this project, I used SQL queries to examine a database, tackling tasks like finding senior employees, top customers, and popular music genres by country. For instance, I identified the most senior employee based on job title and counted invoices by billing country to discover which countries had the most invoices. Other queries revealed the top 3 total invoice values, the city with the best customers, and the customer who spent the most money, offering valuable insights.
+In this project, I used SQL queries to analyze a digital music store's data. I did various tasks like finding the most experienced employees, figuring out the top customers, and discovering popular music genres in different countries. For example, I found the most senior employee based on their job title and identified countries with the most invoices. I also determined the top 3 invoice values and which city had the best customers. Additionally, I identified the best-spending customer. To do all this, I wrote specific SQL queries that provided valuable insights into the database.
 
 # Questions and Answers
 
