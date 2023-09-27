@@ -30,7 +30,7 @@ To find the customer who spent the most money, I joined the "customer" and "invo
 🔎 **Q6: Write query to return the email, first name, last name, & Genre of all Rock Music listeners. 
 Return your list ordered alphabetically by email starting with A.**
 
-I provided two methods to find this information. Both methods involved joining multiple tables like "customer," "invoice," "invoiceline," "track," and "genre." They filtered for tracks with the genre name "Rock" and retrieved customer details for those who purchased such tracks. The results were ordered alphabetically by email.
+I provided two methods to find this information. Both methods involved joining multiple tables like "customer," "invoice," "invoice_line," "track," and "genre." They filtered for tracks with the genre name "Rock" and retrieved customer details for those who purchased such tracks. The results were ordered alphabetically by email.
 
 🔎 **Q7: Let's invite the artists who have written the most rock music in our dataset. 
 Write a query that returns the Artist name and total track count of the top 10 rock bands.**
