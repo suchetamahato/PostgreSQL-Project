@@ -3,7 +3,7 @@
 SELECT title, last_name, first_name 
 FROM employee
 ORDER BY levels DESC
-LIMIT 1
+LIMIT 1;
 
 
 /* Q2: Which countries have the most Invoices? */
@@ -11,14 +11,15 @@ LIMIT 1
 SELECT COUNT(*) AS c, billing_country 
 FROM invoice
 GROUP BY billing_country
-ORDER BY c DESC
+ORDER BY c DESC;
 
 
 /* Q3: What are top 3 values of total invoice? */
 
 SELECT total 
 FROM invoice
-ORDER BY total DESC
+ORDER BY total DESC;
+
 
 /* Q4: Which city has the best customers? We would like to throw a promotional Music Festival in the city we made the most money. 
 Write a query that returns one city that has the highest sum of invoice totals. 
@@ -50,7 +51,7 @@ Return your list ordered alphabetically by email starting with A. */
 SELECT DISTINCT email,first_name, last_name
 FROM customer
 JOIN invoice ON customer.customer_id = invoice.customer_id
-JOIN invoiceline ON invoice.invoice_id = invoiceline.invoice_id
+JOIN invoice_line ON invoice.invoice_id = invoice_line.invoice_id
 WHERE track_id IN(
 	SELECT track_id FROM track
 	JOIN genre ON track.genre_id = genre.genre_id
@@ -64,8 +65,8 @@ ORDER BY email;
 SELECT DISTINCT email AS Email,first_name AS FirstName, last_name AS LastName, genre.name AS Name
 FROM customer
 JOIN invoice ON invoice.customer_id = customer.customer_id
-JOIN invoiceline ON invoiceline.invoice_id = invoice.invoice_id
-JOIN track ON track.track_id = invoiceline.track_id
+JOIN invoice_line ON invoice_line.invoice_id = invoice.invoice_id
+JOIN track ON track.track_id = invoice_line.track_id
 JOIN genre ON genre.genre_id = track.genre_id
 WHERE genre.name LIKE 'Rock'
 ORDER BY email;
@@ -88,12 +89,12 @@ LIMIT 10;
 /* Q8: Return all the track names that have a song length longer than the average song length. 
 Return the Name and Milliseconds for each track. Order by the song length with the longest songs listed first. */
 
-SELECT name,miliseconds
+SELECT name, milliseconds
 FROM track
-WHERE miliseconds > (
-	SELECT AVG(miliseconds) AS avg_track_length
+WHERE milliseconds > (
+	SELECT AVG(milliseconds) AS avg_track_length
 	FROM track )
-ORDER BY miliseconds DESC;
+ORDER BY milliseconds DESC;
 
 
 /* Q9: Find how much amount spent by each customer on artists? Write a query to return customer name, artist name and total spent. */
@@ -162,6 +163,7 @@ SELECT sales_per_country.*
 FROM sales_per_country
 JOIN max_genre_per_country ON sales_per_country.country = max_genre_per_country.country
 WHERE sales_per_country.purchases_per_genre = max_genre_per_country.max_genre_number;
+
 
 
 /* Q11: Write a query that determines the customer that has spent the most on music for each country. 
